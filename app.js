@@ -18,6 +18,7 @@ db.getConnection((error) => {
 });
 
 app.post('/addSchool', (request, response) => {
+    console.log("Accessing /addSchool");
     const { name, address, latitude, longitude } = request.body;
 
     // Input validation
@@ -36,6 +37,8 @@ app.post('/addSchool', (request, response) => {
 });
 
 app.get('/listSchools', (request, response) => {
+    console.log("Accessing /listSchool");
+
     const { latitude, longitude } = request.query;
 
     if (!latitude || !longitude) {
