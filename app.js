@@ -8,7 +8,9 @@ const app = express();
 app.use(express.json());
 
 // connection to Local Mongo DB
-connectDB().getConnection((error) => {
+const db = connectDB()
+
+db.getConnection((error) => {
     if (error) 
         console.error("Connection unsuccessful due to => ", error);
     else
